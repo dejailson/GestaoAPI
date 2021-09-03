@@ -1,0 +1,58 @@
+HELP.md
+target/
+
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+##############################
+## Arquivos o projeto
+##############################
+aula/
+
+##############################
+## MAVEN
+##############################
+mvnw
+mvnw.cmd
+.mvn/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+##############################
+## Visual Studio Code
+##############################
+.vscode/
+.code-workspace
+
+##############################
+## OS X
+##############################
+.DS_Store
+
+##############################
+## DOTUML
+##############################
+*.dotuml
