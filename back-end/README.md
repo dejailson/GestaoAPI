@@ -1,4 +1,4 @@
-# Atividade prática da disciplina **Desenvolvimento Web**
+# Desenvolvimento do **Back-end** - Aplicação Gestão de Lotação de Empregados 
 
 ## Este projeto visa no desenvolvimento de uma aplicação back-end utilizando os princípios básicos do framework SPRING 
 
