@@ -1,4 +1,5 @@
 # Aplicação de Gestão de Lotação de Empregados
+## Atividade prática da disciplina **Desenvolvimento Web**
 ## Este projeto prático visa no desenvolvimento de uma aplicação básica contemplando a implementação de duas camadas de software.
 
 ## Tecnologias utilizadas no projeto
