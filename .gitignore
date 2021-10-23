@@ -1,6 +1,9 @@
 ##############################
 ## Arquivos o projeto
 ##############################
+/front-end/aula
+.vscode/
+aplicacao-gestao.code-workspace
 
 ##############################
 ## OS X

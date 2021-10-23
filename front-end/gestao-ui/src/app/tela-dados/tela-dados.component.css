@@ -1,0 +1,10 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-mini-fab{
+  margin-top: 12px;
+}
+
+table{
+  width: 100vw;
+}

@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-toolbar color="primary">Departamento
+    <span class="example-spacer"></span>
+    <mat-card-actions>
+      <button mat-mini-fab color="link">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-toolbar>
+  <table mat-table [dataSource]="departamentos">
+    <!--Atributo código-->
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Código </th>
+      <td mat-cell *matCellDef="let dep"> {{dep.codigo}} </td>
+    </ng-container>
+
+    <!--Atributo nome-->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let dep"> {{dep.nome}} </td>
+    </ng-container>
+    <!--Atributo sigla-->
+    <ng-container matColumnDef="sigla">
+      <th mat-header-cell *matHeaderCellDef> Sigla </th>
+      <td mat-cell *matCellDef="let dep"> {{dep.sigla}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="nomesColunas"></tr>
+    <tr mat-row *matRowDef="let linha; columns: nomesColunas"></tr>
+  </table>
+</mat-card>
