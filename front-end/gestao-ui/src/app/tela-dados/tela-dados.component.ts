@@ -1,3 +1,4 @@
+import { DepartamentosService } from './../servico/departamentos.service';
 import { Departamento } from './../modelo/departamento.interface';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,19 +12,20 @@ export class TelaDadosComponent implements OnInit {
   nomesColunas: String[]=['codigo','nome', 'sigla']
 
   departamentos: Departamento[]=[{
-    codigo: '1',
-    nome: 'Departamento Acadêmico de Letras',
-    sigla:'DAL'
-  },
-  {
-    codigo: '2',
-    nome: 'Departamento Metal Mecânica',
-    sigla:'DMM'
+    codigo: '',
+    nome: '',
+    sigla:''
   }]
 
-  constructor() { }
+  constructor(private servico: DepartamentosService) { }
 
   ngOnInit(): void {
+    this.servico.listar()
+      .subscribe(
+        data => this.departamentos = data,
+        error => console.log('ERROR'),
+        () => console.log('Concluído')
+      )
   }
 
 }

@@ -11,6 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 import { TelaDadosComponent } from './tela-dados/tela-dados.component';
 
@@ -28,7 +29,8 @@ import { TelaDadosComponent } from './tela-dados/tela-dados.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

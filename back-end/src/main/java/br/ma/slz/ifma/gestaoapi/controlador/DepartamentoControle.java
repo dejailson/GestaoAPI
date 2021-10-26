@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.ma.edu.ifma.ita.siged.excecao.CampoDuplicadoException;
@@ -22,13 +24,31 @@ import br.ma.slz.ifma.gestaoapi.repositorio.IDepartamentoRepositorio;
 
 //http://locahost:8080/departamentos/1/funcionario
 //gestao.recurso.api DNS
+/*
+Definir o acesso apenas ao recurso /departamentos
+@CrossOrigin(originPatterns = {"http://localhost:4200","www.g1.com"},
+    methods = {
+        RequestMethod.DELETE,
+        RequestMethod.GET,
+        RequestMethod.HEAD,
+        RequestMethod.OPTIONS,
+        RequestMethod.PATCH,
+        RequestMethod.POST,
+        RequestMethod.PUT,
+        RequestMethod.TRACE
+    })
+**/    
 @RestController
 @RequestMapping(path = "/departamentos", consumes = {MediaType.APPLICATION_JSON_VALUE})
 public class DepartamentoControle {
 
     @Autowired
     private IDepartamentoRepositorio repositorio;
-
+    
+    /*
+    Definir ao acesso apenas ao VERBO GET do recurso /departamentos
+    @CrossOrigin(origins = {"http://localhost:4200","www.g1.com"})
+    */
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<Departamento>> listar(){
         /*var depInformatica = new Departamento("12212",
