@@ -1,5 +1,5 @@
 export interface Departamento {
-  codigo: string,
-  nome: string,
-  sigla: string
+  codigo: string | null,
+  nome: string | null,
+  sigla: string | null
 }

@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-toolbar color="primary">Formulário </mat-toolbar>
+  <form #form="ngForm" (ngSubmit)="salvar(form)">
+    <mat-form-field class="campo-texto"
+    appearance="fill">
+      <mat-label>Código</mat-label>
+      <input matInput name="codigo"required
+      [(ngModel)]="departamento.codigo" #codigo="ngModel"/>
+      <mat-error *ngIf="codigo.invalid">Campo Obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="campo-texto"
+    appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput name="nome"required
+      [(ngModel)]="departamento.nome" #nome="ngModel"/>
+      <mat-error *ngIf="nome.invalid">Campo Obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="campo-texto"
+    appearance="fill">
+      <mat-label>Sigla</mat-label>
+      <input matInput name="sigla"required
+      [(ngModel)]="departamento.sigla" #sigla="ngModel"/>
+      <mat-error *ngIf="sigla.invalid">Campo Obrigatório</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Salvar</button>
+    <button mat-raised-button type="reset">Limpar</button>
+    <a mat-raised-button>Cancelar</a>
+
+  </form>
+</mat-card>

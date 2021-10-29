@@ -2,6 +2,7 @@ import { Departamento } from './../modelo/departamento.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,21 @@ export class DepartamentosService {
   constructor(private http: HttpClient) { }
 
   public listar(): Observable<Departamento[]>{
-    let dep: Departamento[] = [];
+    //let dep: Departamento[] = []; retirar
     return this.http.get<Departamento[]>(`${this.URI_BASE}/${this.recurso}`,
       {headers:this.getHeaders()}
+    )
+    .pipe(
+      take(1)
     );
+  }
+
+  public salvar(departamento: Departamento): Observable<Departamento>{
+    return this.http.post<Departamento>(`${this.URI_BASE}/${this.recurso}`,
+        departamento,{headers:this.getHeaders()})
+        .pipe(
+          take(1)
+        )
   }
 
   private getHeaders(): HttpHeaders{

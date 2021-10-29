@@ -12,14 +12,19 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 import { TelaDadosComponent } from './tela-dados/tela-dados.component';
+import { DepartamentoCadastroComponent } from './departamento-cadastro/departamento-cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarraMenuComponent,
-    TelaDadosComponent
+    TelaDadosComponent,
+    DepartamentoCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,10 @@ import { TelaDadosComponent } from './tela-dados/tela-dados.component';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
