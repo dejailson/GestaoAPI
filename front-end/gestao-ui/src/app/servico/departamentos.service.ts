@@ -32,6 +32,30 @@ export class DepartamentosService {
         )
   }
 
+  public excluir(codigo: string): Observable<void>{
+    return this.http.delete<void> (`${this.URI_BASE}/${this.recurso}/${codigo}`,
+    {headers: this.getHeaders()})
+      .pipe(
+        take(1)
+      )
+  }
+
+  public atualizar(departamento: Departamento): Observable<Departamento>{
+    return this.http.put<Departamento> (`${this.URI_BASE}/${this.recurso}`,
+      departamento,{headers: this.getHeaders()})
+      .pipe(
+        take(1)
+      )
+  }
+
+  public pesquisar(codigo: string): Observable<Departamento>{
+    return this.http.get<Departamento> (`${this.URI_BASE}/${this.recurso}/${codigo}`,
+    {headers: this.getHeaders()})
+    .pipe(
+      take(1)
+    )
+      }
+
   private getHeaders(): HttpHeaders{
     const cabecalho = new HttpHeaders().
       append('Content-Type', 'application/json').

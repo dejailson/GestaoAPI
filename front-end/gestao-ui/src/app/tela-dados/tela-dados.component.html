@@ -2,9 +2,9 @@
   <mat-toolbar color="primary">Departamento
     <span class="example-spacer"></span>
     <mat-card-actions>
-      <button mat-mini-fab color="link">
+      <a mat-mini-fab color="link" routerLink="/departamentos/novo">
         <mat-icon>add</mat-icon>
-      </button>
+      </a>
     </mat-card-actions>
   </mat-toolbar>
   <table mat-table [dataSource]="departamentos">
@@ -23,6 +23,20 @@
     <ng-container matColumnDef="sigla">
       <th mat-header-cell *matHeaderCellDef> Sigla </th>
       <td mat-cell *matCellDef="let dep"> {{dep.sigla}} </td>
+    </ng-container>
+
+    <!--Colunas de botoes-->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let dep">
+          <a mat-icon-button color="primary"
+          [routerLink]="['/departamentos',dep.codigo]">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <a mat-icon-button color="warn" (click)='excluir(dep.codigo)'>
+            <mat-icon>delete</mat-icon>
+          </a>
+    </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="nomesColunas"></tr>

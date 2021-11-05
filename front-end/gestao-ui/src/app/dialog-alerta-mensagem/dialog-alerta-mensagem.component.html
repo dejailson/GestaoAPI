@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>
+  <mat-icon color="warn">warning</mat-icon>
+  Alerta
+  </h2>
+  <mat-dialog-content>
+    Tem certeza que deseja excluir o Departamento?
+  </mat-dialog-content> <mat-dialog-actions>
+  <button mat-button (click)="confirmar()">
+  <mat-icon color="primary">done</mat-icon>Sim</button>
+  <button mat-button (click)="cancelar()">
+    <mat-icon color="warn">close</mat-icon>Não
+  </button>
+</mat-dialog-actions>

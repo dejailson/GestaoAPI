@@ -8,6 +8,6 @@ a{
   margin-right: 10px;
 }
 
-a:hover{
+a.menu:hover{
   color:red;
 }

@@ -15,16 +15,27 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { TelaDadosComponent } from './tela-dados/tela-dados.component';
 import { DepartamentoCadastroComponent } from './departamento-cadastro/departamento-cadastro.component';
+import { DialogSucessoMensagemComponent } from './dialog-sucesso-mensagem/dialog-sucesso-mensagem.component';
+import { DialogErroMensagemComponent } from './dialog-erro-mensagem/dialog-erro-mensagem.component';
+import { DialogAlertaMensagemComponent } from './dialog-alerta-mensagem/dialog-alerta-mensagem.component';
+import { EdicaoDepartamentoComponent } from './edicao-departamento/edicao-departamento.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarraMenuComponent,
     TelaDadosComponent,
-    DepartamentoCadastroComponent
+    DepartamentoCadastroComponent,
+    DialogSucessoMensagemComponent,
+    DialogErroMensagemComponent,
+    DialogAlertaMensagemComponent,
+    EdicaoDepartamentoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,8 @@ import { DepartamentoCadastroComponent } from './departamento-cadastro/departame
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

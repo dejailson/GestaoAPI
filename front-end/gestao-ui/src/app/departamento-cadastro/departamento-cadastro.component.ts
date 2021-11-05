@@ -1,7 +1,10 @@
-import { DepartamentosService } from './../servico/departamentos.service';
-import { Departamento } from './../modelo/departamento.interface';
+import { DialogErroMensagemComponent } from './../dialog-erro-mensagem/dialog-erro-mensagem.component';
+import { DialogSucessoMensagemComponent } from './../dialog-sucesso-mensagem/dialog-sucesso-mensagem.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Departamento } from './../modelo/departamento.interface';
+import { DepartamentosService } from './../servico/departamentos.service';
 
 @Component({
   selector: 'app-departamento-cadastro',
@@ -16,17 +19,28 @@ export class DepartamentoCadastroComponent implements OnInit {
     sigla: null
   }
 
-  constructor(private servico: DepartamentosService) { }
+  constructor(
+    private servico: DepartamentosService,
+    public caixa: MatDialog
+    ) { }
 
   ngOnInit(): void {
-
   }
    salvar(form:NgForm){
      if(form.valid){
       this.servico.salvar(this.departamento)
       .subscribe(
-        data => console.log(data),
-        error => console.log('error')
+        data => {
+          this.caixa.open(DialogSucessoMensagemComponent)
+          .afterClosed().subscribe(
+            () => form.resetForm()
+          )
+        },
+        error => {
+          this.caixa.open(DialogErroMensagemComponent,{
+            data:{mensagem:error.error}
+          })
+        }
       )
       //.unsubscribe();
      }
